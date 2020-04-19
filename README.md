@@ -64,7 +64,7 @@ To be tested: https://www.reddit.com/r/linux/comments/78is1r/complete_disable_of
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=deep"
 ```
 
-# Turn on 'Synchronization’ NVIDIA X Server Settings
+### Turn on 'Synchronization’ NVIDIA X Server Settings
 
 ```
 # crontab -e
