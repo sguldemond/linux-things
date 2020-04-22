@@ -216,3 +216,21 @@ https://stackoverflow.com/questions/11173769/how-to-make-the-tab-character-4-spa
 - curl
 - git
 - mlocate (run `updatedb` after)
+
+
+### Citrix certificates
+
+Add needed certificate to Citrix certificate folder `/opt/Citrix/ICAClient/keystore/cacerts/`
+
+```
+$ locate Nederland
+...
+/opt/Citrix/ICAClient/keystore/cacerts/Staat_der_Nederlanden_Root_CA_-_G3.crt
+...
+```
+
+https://forum.ubuntu-nl.org/index.php?topic=101708.0
+
+```
+sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts
+```
