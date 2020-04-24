@@ -251,3 +251,19 @@ sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/c
 - Psensor
 - Gparted
 - Grub Customizer
+
+### Work apps
+
+- Slack
+- Citrix Workspace
+- Signal
+- Insomnia
+- pgAdmin4
+- PyCharm CE
+- Skype
+- Microsoft Teams
+
+### Other apps
+
+- Telegram
+- 
