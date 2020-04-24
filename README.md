@@ -234,3 +234,14 @@ https://forum.ubuntu-nl.org/index.php?topic=101708.0
 ```
 sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts
 ```
+
+### Thunderbird
+
+#### Add-ons
+
+- ExQuilla for Exchange
+- TbSync
+- Thunderbird Conversations
+- Provider for Google Calender
+- Provider for Exchange ActiveSync
+- Lightning
