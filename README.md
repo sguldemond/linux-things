@@ -245,3 +245,9 @@ sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/c
 - Provider for Google Calender
 - Provider for Exchange ActiveSync
 - Lightning
+
+### Usefull apps
+
+- Psensor
+- Gparted
+- Grub Customizer
