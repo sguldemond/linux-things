@@ -274,6 +274,16 @@ STORAGE_DIR = '/var/lib/pgadmin4/storage'
 SERVER_MODE = False
 ```
 
+Change in both files the same line:
+```
+$ nano ~/pgadmin4/lib/python3.8/site-packages/flask_wtf/recaptcha/validators.py
+$ nano ~/pgadmin4/lib/python3.8/site-packages/flask_wtf/recaptcha/widgets.py
+
+replace: from werkzeug import url_encode
+with: from werkzeug.urls import url_encode
+```
+(Source: https://stackoverflow.com/questions/60896993/importerror-cannot-import-name-url-encode-from-werkzeug)
+
 Run setup:
 ```
 (pgadmin4) $ python ~/pgadmin4/lib/python3.8/site-packages/pgadmin4/setup.py 
