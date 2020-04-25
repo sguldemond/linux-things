@@ -210,13 +210,6 @@ set tabstospaces
 
 https://stackoverflow.com/questions/11173769/how-to-make-the-tab-character-4-spaces-instead-of-8-spaces-in-nano
 
-### Post distro install packages
-
-- zsh
-- curl
-- git
-- mlocate (run `updatedb` after)
-
 
 ### Citrix certificates
 
@@ -235,6 +228,68 @@ https://forum.ubuntu-nl.org/index.php?topic=101708.0
 sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts
 ```
 
+### pgAdmin4
+
+#### How to install pgadmin4 in desktop mode in Ubuntu 20.04 with python 3.8.2 (April 25th, 2020)
+
+Following main lines of this guide: https://www.pgadmin.org/download/pgadmin-4-python-wheel/
+
+Install requirements:
+```
+# apt install build-essential python3-dev python3-venv
+```
+
+Setup venv:
+```
+$ cd ~
+$ python3 -m venv pgadmin4
+$ source pgadmin4/bin/activate
+```
+
+Install pgadmin4, make sure to change version to most recent when using the link, e.g. 4.17 > 4.20:
+```
+(pgadmin4) $ pip install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.20/pip/pgadmin4-4.20-py2.py3-none-any.whl
+```
+
+Before error occurs create these folder yourself:
+```
+# mkdir /var/lib/pgadmin4
+# mkdir /var/log/pgadmin4
+```
+
+And own them:
+```
+# chown -R $USER:$USER /var/lib/pgadmin4
+# chown -R $USER:$USER /var/log/pgadmin4
+```
+
+Set desktop mode by creating new config file:
+```
+$ nano ~/pgadmin4/lib/python3.8/site-packages/pgadmin4/config_local.py
+
+LOG_FILE = '/var/log/pgadmin4/pgadmin4.log'
+SQLITE_PATH = '/var/lib/pgadmin4/pgadmin4.db'
+SESSION_DB_PATH = '/var/lib/pgadmin4/sessions'
+STORAGE_DIR = '/var/lib/pgadmin4/storage'
+SERVER_MODE = False
+```
+
+Run setup:
+```
+(pgadmin4) $ python ~/pgadmin4/lib/python3.8/site-packages/pgadmin4/setup.py 
+```
+
+I already had a `pgadmin4.db` with settings from my previous install, so I linked it:
+```
+$ cd /var/lib/pgadmin4
+# ln -s ~/.pgadmin/pgadmin4.db pgadmin4.db
+```
+
+Try running it:
+```
+(pgadmin4) $ python ~/pgadmin4/lib/python3.7/site-packages/pgadmin4/pgAdmin4.py
+```
+
 ### Thunderbird
 
 #### Add-ons
@@ -246,13 +301,14 @@ sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/c
 - Provider for Exchange ActiveSync
 - Lightning
 
-### Usefull apps
+
+### Apps
 
 - Psensor
 - Gparted
 - Grub Customizer
 
-### Work apps
+#### Work
 
 - Slack
 - Citrix Workspace
@@ -263,7 +319,14 @@ sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/c
 - Skype
 - Microsoft Teams
 
-### Other apps
+#### Other
 
 - Telegram
-- 
+
+#### CLI
+
+- zsh, then run `chsh -s $(which zsh)`
+- curl
+- git
+- mlocate, then run `updatedb`
+- [docker](https://docs.docker.com/engine/install/ubuntu/)
