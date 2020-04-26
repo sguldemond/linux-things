@@ -68,6 +68,8 @@ To be tested: https://www.reddit.com/r/linux/comments/78is1r/complete_disable_of
 # nano /etc/default/grub
 
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=deep"
+
+# update-grub
 ```
 
 ### Turn on 'Synchronization’ NVIDIA X Server Settings
