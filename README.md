@@ -27,9 +27,11 @@ sudo update-initramfs -u
 
 ### Screen tearing fix (Intel i915 graphics)
 
+
+#### Method 1
+
 ```
-# mkdir -p /etc/X11/xorg.conf.d/
-# nano /etc/X11/xorg.conf.d/20-intel.conf
+# nano /usr/share/X11/xorg.conf.d/20-intel.conf
 
 Section "Device"
     Identifier "Intel Graphics"
@@ -38,7 +40,11 @@ Section "Device"
 EndSection
 ```
 
-https://www.pcsuggest.com/fix-linux-screen-tearing/
+Original source: https://www.pcsuggest.com/fix-linux-screen-tearing/
+
+UPDATE: changed location from `/etc/X11/xorg.conf.g` to `/usr/share/X11/xorg.conf.d` based on: https://manpages.debian.org/buster/xserver-xorg-core/xorg.conf.5.en.html
+
+More: https://forum.manjaro.org/t/screen-tearing-and-lagging-using-intel-open-source-drive-i915/95065
 
 ### Prime select
 
@@ -340,3 +346,4 @@ Try running it:
 - git
 - mlocate, then run `updatedb`
 - [docker](https://docs.docker.com/engine/install/ubuntu/)
+- net-tools, for ifconfig
