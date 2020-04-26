@@ -56,6 +56,7 @@ Set `gfx.xrender.enabled` to `true`
 
 Source: https://forums.linuxmint.com/viewtopic.php?p=1202538#p1202538
 
+
 ### Prime select
 
 Since the PRIME profiles selector is not showing in my Nvidia X Server Settings any more, using this tool you can do the same. Reboot after change is needed.
