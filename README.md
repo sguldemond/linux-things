@@ -11,7 +11,10 @@ $ modinfo i915 | nvidia | nouveau
 
 https://www.reddit.com/r/archlinux/comments/8z09am/xps_15_9570_intel_graphics_optimize/
 
-### Screen tearing fix (when using Nvidia driver)
+
+### Screen tearing
+
+#### Nvidia driver
 
 ```
 # nano /etc/modprobe.d/zz-nvidia-modeset.conf
@@ -25,9 +28,7 @@ sudo update-initramfs -u
 
 - https://askubuntu.com/questions/1185277/screen-tearing-in-linux-with-nvidia-graphics
 
-### Screen tearing fix (Intel i915 graphics)
-
-#### Method 1
+#### Intel i915 graphics
 
 ```
 # nano /usr/share/X11/xorg.conf.d/20-intel.conf
@@ -41,13 +42,15 @@ EndSection
 
 Original source: https://www.pcsuggest.com/fix-linux-screen-tearing/
 
-UPDATE: changed location from `/etc/X11/xorg.conf.g` to `/usr/share/X11/xorg.conf.d` based on: https://manpages.debian.org/buster/xserver-xorg-core/xorg.conf.5.en.html
+UPDATE 26-04-2020:
+- changed location from `/etc/X11/xorg.conf.d` to `/usr/share/X11/xorg.conf.d` based on: https://manpages.debian.org/buster/xserver-xorg-core/xorg.conf.5.en.html
+- Experiencing glitching/artificats with `TearFree` on `true`, so currently disabled my wallpaper, this helps a bit.
 
 More: https://forum.manjaro.org/t/screen-tearing-and-lagging-using-intel-open-source-drive-i915/95065
 
-#### Diagonal tearing in Firefox fix
+#### Diagonal tearing in Firefox
 
-Visit: `about:config`
+Visit `about:config`
 
 Set `gfx.xrender.enabled` to `true`
 
