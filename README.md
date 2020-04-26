@@ -27,7 +27,6 @@ sudo update-initramfs -u
 
 ### Screen tearing fix (Intel i915 graphics)
 
-
 #### Method 1
 
 ```
@@ -45,6 +44,16 @@ Original source: https://www.pcsuggest.com/fix-linux-screen-tearing/
 UPDATE: changed location from `/etc/X11/xorg.conf.g` to `/usr/share/X11/xorg.conf.d` based on: https://manpages.debian.org/buster/xserver-xorg-core/xorg.conf.5.en.html
 
 More: https://forum.manjaro.org/t/screen-tearing-and-lagging-using-intel-open-source-drive-i915/95065
+
+#### Diagonal tearing in Firefox fix
+
+Visit: `about:config`
+
+Set `gfx.xrender.enabled` to `true`
+
+Source: https://forums.linuxmint.com/viewtopic.php?p=1202538#p1202538
+
+
 
 ### Prime select
 
