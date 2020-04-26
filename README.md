@@ -42,7 +42,7 @@ EndSection
 
 Original source: https://www.pcsuggest.com/fix-linux-screen-tearing/
 
-UPDATE 26-04-2020:
+_UPDATE 26-04-2020:_
 - changed location from `/etc/X11/xorg.conf.d` to `/usr/share/X11/xorg.conf.d` based on: https://manpages.debian.org/buster/xserver-xorg-core/xorg.conf.5.en.html
 - Experiencing glitching/artificats with `TearFree` on `true`, so currently disabled my wallpaper, this helps a bit.
 
