@@ -44,7 +44,8 @@ Original source: https://www.pcsuggest.com/fix-linux-screen-tearing/
 
 _UPDATE 26-04-2020:_
 - changed location from `/etc/X11/xorg.conf.d` to `/usr/share/X11/xorg.conf.d` based on: https://manpages.debian.org/buster/xserver-xorg-core/xorg.conf.5.en.html
-- Experiencing glitching/artificats with `TearFree` on `true`, so currently disabled my wallpaper, this helps a bit.
+- Experiencing glitching/artifacts with `TearFree` on `true`, so currently disabled my wallpaper, this helps a bit.
+- Glichting/artifacts and screen tearing fixed by switching to Wayland (instead of X11). This is done in by selecting `Ubuntu on Wayland` in the login screen.
 
 More: https://forum.manjaro.org/t/screen-tearing-and-lagging-using-intel-open-source-drive-i915/95065
 
@@ -94,6 +95,55 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=deep"
 Reboot
 
 https://askubuntu.com/questions/1185277/screen-tearing-in-linux-with-nvidia-graphics
+
+
+### Keyboard LED control
+
+#### X11
+
+```
+(on) $ xset led 3
+(off) $ xset -led 3
+```
+
+Or use script:
+```
+#!/bin/bash
+MASK=`xset q | grep LED | cut -d' ' -f 21 | cut -b 8`
+if [ $(($MASK & 4)) = 4 ]; then
+    xset -led 3
+else
+    xset led 3
+fi
+```
+
+
+#### Wayland
+
+`inputX` can differ!
+```
+(on) $ sudo sh -c 'echo 1 > /sys/class/leds/input15::scrolllock/brightness'
+(off) $ sudo sh -c 'echo 0 > /sys/class/leds/input15::scrolllock/brightness'
+```
+
+Source: https://askubuntu.com/questions/967373/wayland-equivalent-to-xset-led
+
+
+Or use script:
+```
+#!/bin/bash
+
+BOOL=`cat /sys/class/leds/input15::scrolllock/brightness`
+
+if [ $BOOL = 1 ]; then
+    export NEW_BOOL=0
+else
+    export NEW_BOOL=1
+fi
+
+sudo -E sh -c 'echo $NEW_BOOL > /sys/class/leds/input15::scrolllock/brightness'
+```
+
 
 ### Fan control
 
