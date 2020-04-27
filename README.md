@@ -43,7 +43,7 @@ EndSection
 Original source: https://www.pcsuggest.com/fix-linux-screen-tearing/
 
 _UPDATE 26-04-2020:_
-- changed location from `/etc/X11/xorg.conf.d` to `/usr/share/X11/xorg.conf.d` based on: https://manpages.debian.org/buster/xserver-xorg-core/xorg.conf.5.en.html
+- Changed location from `/etc/X11/xorg.conf.d` to `/usr/share/X11/xorg.conf.d` based on: https://manpages.debian.org/buster/xserver-xorg-core/xorg.conf.5.en.html
 - Experiencing glitching/artifacts with `TearFree` on `true`, so currently disabled my wallpaper, this helps a bit.
 - Glichting/artifacts and screen tearing fixed by switching to Wayland (instead of X11). This is done in by selecting `Ubuntu on Wayland` in the login screen.
 
@@ -51,12 +51,13 @@ More: https://forum.manjaro.org/t/screen-tearing-and-lagging-using-intel-open-so
 
 #### Diagonal tearing in Firefox
 
+Following works well when running X11/Xorg not when running Wayland.
+
 Visit `about:config`
 
 Set `gfx.xrender.enabled` to `true`
 
 Source: https://forums.linuxmint.com/viewtopic.php?p=1202538#p1202538
-
 
 ### Prime select
 
