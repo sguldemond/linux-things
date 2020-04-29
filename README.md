@@ -59,6 +59,18 @@ Set `gfx.xrender.enabled` to `true`
 
 Source: https://forums.linuxmint.com/viewtopic.php?p=1202538#p1202538
 
+
+### Screen sharing under Wayland
+
+When sharing screen in MS Teams while under Wayland, MS Teams crashed.
+
+Sources to fix this:
+
+- https://jgrulich.cz/2018/07/04/how-to-enable-and-use-screen-sharing-on-wayland/
+- https://wiki.gnome.org/Projects/Mutter/RemoteDesktop
+- https://gitlab.gnome.org/GNOME/mutter/-/issues/1184
+
+
 ### Prime select
 
 Since the PRIME profiles selector is not showing in my Nvidia X Server Settings any more, using this tool you can do the same. Reboot after change is needed.
