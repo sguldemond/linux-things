@@ -295,6 +295,8 @@ https://stackoverflow.com/questions/11173769/how-to-make-the-tab-character-4-spa
 
 ### Citrix certificates
 
+#### Certs from Mozilla
+
 Add needed certificate to Citrix certificate folder `/opt/Citrix/ICAClient/keystore/cacerts/`
 
 ```
@@ -304,11 +306,21 @@ $ locate Nederland
 ...
 ```
 
-https://forum.ubuntu-nl.org/index.php?topic=101708.0
-
 ```
 sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts
 ```
+
+https://forum.ubuntu-nl.org/index.php?topic=101708.0
+
+#### Certs from Ubuntu
+
+```
+cd /opt/Citrix/ICAClient/keystore/ 
+sudo mv cacerts cacerts_old 
+sudo ln -s /etc/ssl/certs cacerts
+```
+
+https://discussions.citrix.com/topic/392126-receiver-138-no-cgp-service/
 
 ### pgAdmin4
 
