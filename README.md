@@ -394,6 +394,41 @@ Try running it:
 (pgadmin4) $ python ~/pgadmin4/lib/python3.7/site-packages/pgadmin4/pgAdmin4.py
 ```
 
+### Dummy display
+
+When remotely connecting to a (desktop) Ubuntu machine with no default connected physical display a dummy screen can be added. This way e.g. TeamViewer can always connect to a display even when none in connected to the machine.
+
+Install package: `sudo apt-get install xserver-xorg-video-dummy`
+
+Config files location: `/usr/share/X11/xorg.conf.d/`
+
+Dummy display config:
+```
+Section "Device"
+    Identifier  "Configured Video Device"
+    Driver      "dummy"
+    Screen      1
+EndSection
+
+Section "Monitor"
+    Identifier  "Configured Monitor"
+    HorizSync 31.5-48.5
+    VertRefresh 50-70
+EndSection
+
+Section "Screen"
+    Identifier  "Default Screen"
+    Monitor     "Configured Monitor"
+    Device      "Configured Video Device"
+    DefaultDepth 24
+    SubSection "Display"
+    Depth 24
+    Modes "1920x1080"
+    EndSubSection
+EndSection
+```
+
+
 ### Thunderbird
 
 #### Add-ons
