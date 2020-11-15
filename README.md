@@ -407,7 +407,6 @@ Dummy display config:
 Section "Device"
     Identifier  "Configured Video Device"
     Driver      "dummy"
-    Screen      1
 EndSection
 
 Section "Monitor"
@@ -428,6 +427,86 @@ Section "Screen"
 EndSection
 ```
 
+### Wifi keeps disconnecting
+
+Attempt 1 DIDN'T FIX MY ISSUE
+
+```
+I had the same problem with this wifi card on Debian. Updating settings on router wasn't an option. What helped was to update binary firmware from here: https://github.com/kvalo/ath10k-firmware/tree/master/QCA6174/hw3.0/4.4.1
+
+Just download last version and replace file firmware-6.bin located at /lib/firmware/ath10k/QCA6174/hw3.0/.
+
+Then reload affected kernel modules:
+
+modprobe -r ath10k_pci ath10k_core
+modprobe ath10k_pci
+modprobe ath10k_core
+```
+
+https://askubuntu.com/questions/870412/wifi-dell-xps-13-9360-keeps-disconnecting-with-qca6174-802-11ac-wireless-network
+
+Attempt 2 DIDNT WORK
+```
+I finally solved this after browsing and trying a couple of threads on various blogs.
+
+The problem: My router is old and didn't supported 802.11n protocol, that caused the internet to slow down only in Ubuntu because by default it was being used.
+
+The Solution: To force disable the 802.11 protocol permanently:
+
+Step 1: Open iwlwifi.conf using nano or any other text editor.
+
+sudo nano /etc/modprobe.d/iwlwifi.conf
+
+Step 2: Add a line to force disable 802.11n protocol
+
+options iwlwifi 11n_disable=1
+
+Step 3: Save and reboot your PC.
+
+NOTE: The changes won't take effect until you reboot your PC.
+
+If you want to reverse the changes the please remove the line you've added and reboot.
+
+This solved my problem and If your PC has the same issue, I'm sure it will solve yours too.
+```
+
+https://askubuntu.com/questions/1243381/wifi-is-slow-and-unstable-on-ubuntu-20-04-dual-boot-dell-xps-l502x
+
+
+Attempt 3
+
+```
+Edit /etc/NeworkManager/conf.d/default-wifi-powersave-on.conf
+
+In that file you will see a line that looks like this;
+
+wifi.powersave = 3
+
+Change the 3 to a 2 (which means disabled) and reboot. The problem should be resolved.
+```
+
+https://www.reddit.com/r/SurfaceLinux/comments/g8dqbr/ubuntu_2004_wifi_problem/
+https://gist.github.com/jcberthon/ea8cfe278998968ba7c5a95344bc8b55
+
+
+### WiFi got really slow after update in Ubuntu 20.04.1
+
+Fix:
+```
+sudo apt install backport-iwlwifi-dkms
+```
+
+Info:
+
+https://askubuntu.com/questions/1046589/backport-for-iwlwifi
+
+### Remove orphaned packages
+
+https://sites.google.com/site/easytipsforlinux/using-deborphan
+
+```
+$ sudo apt-get install deborphan
+```
 
 ### Thunderbird
 
