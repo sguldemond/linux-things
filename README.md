@@ -525,6 +525,9 @@ $ sudo apt-get install deborphan
 - Psensor
 - Gparted
 - Grub Customizer
+- [Menulibre](https://bluesabre.org/menulibre/)
+- DBeaver
+- Joplin
 
 #### Work
 
@@ -541,7 +544,7 @@ $ sudo apt-get install deborphan
 
 - Telegram
 
-#### CLI
+#### Terminal
 
 - zsh, then run `chsh -s $(which zsh)`
 - curl
@@ -549,3 +552,4 @@ $ sudo apt-get install deborphan
 - mlocate, then run `updatedb`
 - [docker](https://docs.docker.com/engine/install/ubuntu/)
 - net-tools, for ifconfig
+- [micro](https://micro-editor.github.io/), nano alternative
