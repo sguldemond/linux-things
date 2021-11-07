@@ -553,4 +553,5 @@ $ sudo apt-get install deborphan
 - [docker](https://docs.docker.com/engine/install/ubuntu/)
 - net-tools, for ifconfig
 - [micro](https://micro-editor.github.io/), nano alternative
+    - move to `/usr/local/bin`
 - [vim config](https://gist.github.com/miguelgrinberg/527bb5a400791f89b3c4da4bd61222e4), from [youtube](https://www.youtube.com/watch?v=s0Bimr1079A)
