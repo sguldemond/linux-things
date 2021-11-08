@@ -557,6 +557,8 @@ $ sudo apt-get install deborphan
 #### Terminal
 
 - zsh, then run `chsh -s $(which zsh)`
+- [oh my zsh](https://ohmyz.sh/)
+    - current theme: awesomepanda
 - curl
 - git
 - mlocate, then run `updatedb`
