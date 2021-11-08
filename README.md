@@ -1,5 +1,36 @@
 # Linux things
 
+### Networking
+
+#### Incoming ports
+
+Ports of own machine
+
+```
+sudo netstat -lnp
+```
+
+To list all listening port numbers with the process responsible on each one. Terminate or kill the process to close port. (kill, pkill ...)
+
+https://askubuntu.com/questions/410218/how-to-close-an-open-port-in-ubuntu
+
+Ports of other machines
+
+```
+sudo apt install nmap
+nmap -Pn google.com | 83.24.772.218
+```
+
+https://linuxhint.com/port_scan_linux/
+
+
+#### Outgoing ports
+
+Check if you can connect to the outside on specific port, outgoing ports check.
+```
+telnet foo.bar.com 25
+```
+
 ### Video driver info
 
 ```
@@ -237,27 +268,6 @@ msgconvert filename*.msg
 ```
 
 https://rohitmurame.blogspot.com/2018/10/how-to-open-msg-file-in-linux.html
-
-### Port scanning
-
-Ports of own machine
-
-```
-sudo netstat -lnp
-```
-
-To list all listening port numbers with the process responsible on each one. Terminate or kill the process to close port. (kill, pkill ...)
-
-https://askubuntu.com/questions/410218/how-to-close-an-open-port-in-ubuntu
-
-Ports of other machines
-
-```
-sudo apt install nmap
-nmap -Pn google.com | 83.24.772.218
-```
-
-https://linuxhint.com/port_scan_linux/
 
 
 ### SSH Config
