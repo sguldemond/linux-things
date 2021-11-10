@@ -518,6 +518,25 @@ https://sites.google.com/site/easytipsforlinux/using-deborphan
 $ sudo apt-get install deborphan
 ```
 
+### Firefox
+
+#### Add seperate launcher for profile
+
+```
+$ cd ~/.local/share/applications
+$ nano firefox-personal.desktop
+
+[Desktop Entry]
+Name=Firefox Personal
+Exec=firefox -P Personal -no-remote --class FxTest
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=firefox
+StartupWMClass=FxTest
+```
+
+
 ### Thunderbird
 
 #### Add-ons
