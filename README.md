@@ -1,5 +1,25 @@
 # Linux things
 
+### Memory
+
+The Dell XPS 3590 from West would freeze when reaching near 100% memory usage. Experimenting with changing the swappiness.
+Temporary swappiness change, effective immediatly, resets after reboot:
+```
+sudo sysctl vm.swappiness=30
+```
+
+Persistend change, effective after reboot:
+```
+sudo nano /etc/sysctl.conf
+```
+Add:
+```
+vm.swappiness=30
+```
+
+Sources:
+- https://www.howtogeek.com/449691/what-is-swapiness-on-linux-and-how-to-change-it/
+
 ### Networking
 
 #### Incoming ports
