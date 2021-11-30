@@ -1,5 +1,14 @@
 # Linux things
 
+### PDF
+
+#### Compress PDF file
+
+- [ps2pdf](https://web.mit.edu/ghostscript/www/Ps2pdf.htm)
+```
+ps2pdf input.pdf output.pdf
+```
+
 ### Memory
 
 The Dell XPS 3590 from West would freeze when reaching near 100% memory usage. Experimenting with changing the swappiness.
