@@ -9,6 +9,13 @@
 ps2pdf input.pdf output.pdf
 ```
 
+### Manipulating PDF Documents
+
+- [pdftk](https://gitlab.com/pdftk-java/pdftk)
+```
+apt install pdftk
+```
+
 ### Memory
 
 The Dell XPS 3590 from West would freeze when reaching near 100% memory usage. Experimenting with changing the swappiness.
