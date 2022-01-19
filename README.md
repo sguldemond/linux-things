@@ -67,6 +67,13 @@ Check if you can connect to the outside on specific port, outgoing ports check.
 telnet foo.bar.com 25
 ```
 
+#### DNS lookup utility
+
+Checking of specific DNS resolves hostname
+```
+host nos.nl 8.8.4.4
+```
+
 ### Video driver info
 
 ```
