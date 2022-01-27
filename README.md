@@ -74,6 +74,12 @@ Checking of specific DNS resolves hostname
 host nos.nl 8.8.4.4
 ```
 
+### DNS settings
+
+- `systemd-resolved`
+  - `/etc/resolv.conf`
+  - `resolvectl`
+
 ### Video driver info
 
 ```
