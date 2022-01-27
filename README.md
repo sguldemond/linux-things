@@ -74,6 +74,13 @@ Checking of specific DNS resolves hostname
 host nos.nl 8.8.4.4
 ```
 
+### Digging
+
+```
+apt install dnsutils
+dig google.com
+```
+
 ### DNS settings
 
 - `systemd-resolved`
