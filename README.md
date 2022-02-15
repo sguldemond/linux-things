@@ -574,6 +574,24 @@ https://sites.google.com/site/easytipsforlinux/using-deborphan
 $ sudo apt-get install deborphan
 ```
 
+### Keychron keyboard
+
+
+```
+cat /etc/modprobe.d/hid_apple.conf
+# For Keychron keyboard -- https://wiki.archlinux.org/index.php/Apple_Keyboard
+# - lsusb shows Keychron as Apple Inc keyboard, also in Win/Android mode
+# - According to the documentation mentioned above swap_opt_cmd should 1 for Windows mode
+# - Hardware = Windows mode, Linux = Apple mode, this config is therefor switched
+options hid_apple fnmode=2 swap_opt_cmd=0
+```
+
+```
+modprobe -r hid_apple
+insmod
+rmmod
+```
+
 ### Firefox
 
 #### Add seperate launcher for profile
