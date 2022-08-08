@@ -611,6 +611,22 @@ StartupWMClass=FxTest
 ```
 
 
+### Gnome
+
+#### Crashing/unresponsive
+
+Sometimes Gnome crashes and becomes unrespunsive, this is printed in journalctl:
+```
+aug 08 12:16:56 stan-west-3590 gnome-shell[2400]: ../clutter/clutter/clutter-actor.c:10558: The clutter_actor_set_allocation() function can only be called from within the implementation of the ClutterActor::allocate() virtual function.
+aug 08 12:17:16 stan-west-3590 gnome-shell[2400]: clutter_input_device_ungrab: assertion 'CLUTTER_IS_INPUT_DEVICE (device)' failed
+```
+
+To restart gnome-shell:
+```
+killall -3 gnome-shell
+```
+
+
 ### Thunderbird
 
 #### Add-ons
