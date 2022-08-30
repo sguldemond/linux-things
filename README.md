@@ -1,5 +1,17 @@
 # Linux things
 
+### Filepath
+
+Useful commands to get paths:
+```
+$ realpath file4.txt 
+/tmp/dir1/dir2/dir3/dir4/file4.txt
+$ basename /tmp/dir1/dir2/dir3/dir4/file4.txt
+file4.txt
+$ dirname /tmp/dir1/dir2/dir3/dir4/file4.txt
+/tmp/dir1/dir2/dir3/dir4
+```
+
 ### PDF
 
 #### Compress PDF file
