@@ -1,5 +1,22 @@
 # Linux things
 
+### Sony WH-1000XM3
+
+Install:
+```
+sudo apt install pipewire bluez
+```
+
+Interact with bluetooth, not via Gnome:
+```
+bluetoothctl
+default-agent
+power on
+scan on
+pair [ADDRESS]
+connect [ADDRESS]
+```
+
 ### Filepath
 
 Useful commands to get paths:
