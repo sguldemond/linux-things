@@ -17,6 +17,11 @@ pair [ADDRESS]
 connect [ADDRESS]
 ```
 
+Restore factory settings:
+> Turn off the headset while the USB Type-C cable is disconnected and then press and hold the button and the NC/AMBIENT button simultaneously for 7 seconds or more.
+
+> The blue indicator flashes four times (🔵🔵🔵🔵), and the headset is initialized. This operation resets volume settings, etc., and deletes all pairing information. In this case, delete the pairing information for the headset from the device and then pair them again.
+
 ### Filepath
 
 Useful commands to get paths:
