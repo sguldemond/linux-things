@@ -1,5 +1,46 @@
 # Linux things
 
+### Run commands in background
+
+Source: https://linuxize.com/post/how-to-run-linux-commands-in-background/
+
+To run a command in the background, add the ampersand symbol (&) at the end of the command:
+```
+command &
+```
+The shell job ID (surrounded with brackets) and process ID will be printed on the terminal:
+```
+[1] 25177
+```
+You can have multiple processes running in the background at the same time.
+
+The background process will continue to write messages to the terminal from which you invoked the command. To suppress the stdout and stderr messages use the following syntax:
+```
+command > /dev/null 2>&1 & 
+```
+/dev/null 2>&1 means redirect stdout to /dev/null and stderr to stdout .
+
+Use the jobs utility to display the status of all stopped and background jobs in the current shell session:
+```
+jobs -l
+```
+The output includes the job number, process ID, job state, and the command that started the job:
+```
+[1]+ 25177 Running                 ping google.com &
+```
+To bring a background process to the foreground, use the fg command:
+```
+fg
+```
+If you have multiple background jobs, include % and the job ID after the command:
+```
+fg %1
+```
+To terminate the background process, use the kill command followed by the process ID:
+```
+kill -9 25177
+```
+
 ### Sony WH-1000XM3
 
 Install:
