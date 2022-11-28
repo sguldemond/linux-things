@@ -1,5 +1,21 @@
 # Linux things
 
+### Enable Wayland mode in Firefox
+
+After installing Ubuntu 22.04, which by default uses Wayland, mouse hovering on firefox would break.
+
+It was recommended to enable Wayland mode for Firefox:
+```
+# nano /etc/environment
+```
+
+Add line:
+```
+MOZ_ENABLE_WAYLAND=1
+```
+
+Using "Use recommended performance settings"/"Use hardware acceleration when available" probebly also works. Since the personal profile on Firefox had this enabled, which had no hovering issues.
+
 ### Run commands in background
 
 Source: https://linuxize.com/post/how-to-run-linux-commands-in-background/
