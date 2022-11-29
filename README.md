@@ -1,5 +1,14 @@
 # Linux things
 
+### Show weekday and seconds in topbar Ubuntu
+
+```
+$ gsettings set org.gnome.desktop.interface clock-show-weekday true
+$ gsettings set org.gnome.desktop.interface clock-show-seconds true
+```
+
+Also possible with GNOME Tweaks app.
+
 ### Enable Wayland mode in Firefox
 
 After installing Ubuntu 22.04, which by default uses Wayland, mouse hovering on firefox would break.
