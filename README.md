@@ -1,10 +1,11 @@
 # Linux things
 
-### Show weekday and seconds in topbar Ubuntu
+### Show weekday and seconds in topbar & show week numbers (Gnome)
 
 ```
 $ gsettings set org.gnome.desktop.interface clock-show-weekday true
 $ gsettings set org.gnome.desktop.interface clock-show-seconds true
+$ gsettings set org.gnome.desktop.calendar show-weekdate true
 ```
 
 Also possible with GNOME Tweaks app.
