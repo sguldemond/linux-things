@@ -32,6 +32,6 @@ mrt 17 20:55:15 stan-t480s kernel: nvme nvme0: 8/0/0 default/read/poll queues
 mrt 17 20:55:15 stan-t480s kernel: e1000e 0000:00:1f.6 enp0s31f6: Failed to disable ULP
 ```
 
-## 2023-03-18: Fixed issue
+## Fixed issue (2023-03-18)
 
 For now I fixed the issue, by removing the headset from the paired devices in "Bluetooth Devices" window, and then repairing the headset. When the headset is paired and I close the laptop, first the headset gets disconnected -- which I can hear through the headset -- and then the laptop starts its sleep mode -- which I can tell by the red pulsing Thinkpad light on the lid. 
