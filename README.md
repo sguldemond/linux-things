@@ -1,5 +1,31 @@
 # Linux things
 
+### Backup Google Drive locally
+
+Setup Rclone to connect with Google Drive using Rclone documentation: https://rclone.org/
+
+Add `rclone sync` as daily process using `cron.daily`. Add `sync-gdrive` to `/etc/cron.daily` folder:
+```
+$ cd /etc/cron.daily
+$ ls -al | grep sync-gdrive
+-rwxr-xr-x   1 root root    75 apr 11 19:43 sync-gdrive
+$ cat sync-gdrive
+#!/bin/bash
+rclone sync --verbose --log-file /var/log/rclone gdrive: Grive
+```
+
+Add logrotate to handle log files:
+```
+$ cd /etc/logrotate.d
+$ cat sync-gdrive
+/var/log/rclone.log {
+       daily
+       rotate 7
+       notifempty
+       missingok
+}
+```
+
 ### Show weekday and seconds in topbar & show week numbers (Gnome)
 
 ```
