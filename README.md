@@ -11,7 +11,7 @@ $ ls -al | grep sync-gdrive
 -rwxr-xr-x   1 root root    75 apr 11 19:43 sync-gdrive
 $ cat sync-gdrive
 #!/bin/bash
-rclone sync --verbose --log-file /var/log/rclone.log gdrive: /home/stan/Grive
+rclone sync --verbose --log-file /home/stan/.local/var/log/rclone.log gdrive: /home/stan/Grive
 ```
 
 Add logrotate to handle log files:
