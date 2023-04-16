@@ -14,6 +14,11 @@ $ cat sync-gdrive
 rclone sync --verbose --log-file /home/stan/.local/log/rclone.log gdrive: /home/stan/GoogleDrive
 ```
 
+Test `cron.daily`:
+```
+$ run-parts /etc/cron.daily
+```
+
 Add logrotate to handle log files:
 ```
 $ cd /etc/logrotate.d
