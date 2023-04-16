@@ -11,14 +11,14 @@ $ ls -al | grep sync-gdrive
 -rwxr-xr-x   1 root root    75 apr 11 19:43 sync-gdrive
 $ cat sync-gdrive
 #!/bin/bash
-rclone sync --verbose --log-file /home/stan/.local/var/log/rclone.log gdrive: /home/stan/GoogleDrive
+rclone sync --verbose --log-file /home/stan/.local/log/rclone.log gdrive: /home/stan/GoogleDrive
 ```
 
 Add logrotate to handle log files:
 ```
 $ cd /etc/logrotate.d
 $ cat sync-gdrive
-/var/log/rclone.log {
+/home/stan/.local/log/rclone.log {
        daily
        rotate 7
        notifempty
