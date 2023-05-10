@@ -1,5 +1,24 @@
 # Linux things
 
+### Secure SSH Daemon
+
+When running an SSH server like `openssh-server` on your machine, make sure to secure it.
+On this page are some usefull tips:
+https://www.howtogeek.com/443156/the-best-ways-to-secure-your-ssh-server/
+
+Settings are here: `/etc/ssh/sshd_config`
+Change port:
+```
+Port 123
+
+PermitRootLogin prohibit-password
+MaxAuthTries 3
+
+PasswordAuthentication no
+PermitEmptyPasswords no
+
+X11Forwarding no
+```
 ### Backup Google Drive locally
 
 Setup Rclone to connect with Google Drive using Rclone documentation: https://rclone.org/
