@@ -252,6 +252,50 @@ https://www.reddit.com/r/archlinux/comments/8z09am/xps_15_9570_intel_graphics_op
 
 ### Screen tearing
 
+#### Ubuntu MATE on ThinkPad T480s
+
+Neofetch:
+```
+           `:+shmNNMMNNmhs+:`              stan@stan-t480s 
+        .odMMMMMMMMMMMMMMMMMMdo.           --------------- 
+      /dMMMMMMMMMMMMMMMmMMMMMMMMd/         OS: Ubuntu MATE 22.04.3 LTS x86_64 
+    :mMMMMMMMMMMMMNNNNM/`/yNMMMMMMm:       Host: 20L8S4PR1M ThinkPad T480S 
+  `yMMMMMMMMMms:..-::oM:    -omMMMMMy`     Kernel: 6.2.0-39-generic 
+ `dMMMMMMMMy-.odNMMMMMM:    -odMMMMMMd`    Uptime: 4 mins 
+ hMMMMMMMm-.hMMy/....+M:`/yNm+mMMMMMMMh    Packages: 2689 (dpkg), 15 (snap) 
+/MMMMNmMN-:NMy`-yNMMMMMmNyyMN:`dMMMMMMM/   Shell: zsh 5.8.1 
+hMMMMm -odMMh`sMMMMMMMMMMs sMN..MMMMMMMh   Resolution: 1920x1080 
+NMMMMm    `/yNMMMMMMMMMMMM: MM+ mMMMMMMN   DE: MATE 1.26.0 
+NMMMMm    `/yNMMMMMMMMMMMM: MM+ mMMMMMMN   WM: Metacity (Marco) 
+hMMMMm -odMMh sMMMMMMMMMMs oMN..MMMMMMMh   Theme: Yaru-red-dark [GTK2/3] 
+/MMMMNNMN-:NMy`-yNMMMMMNNsyMN:`dMMMMMMM/   Icons: Yaru-red-dark [GTK2/3] 
+ hMMMMMMMm-.hMMy/....+M:.+hNd+mMMMMMMMh    Terminal: terminator 
+ `dMMMMMMMMy-.odNMMMMMM:    :smMMMMMMd`    CPU: Intel i7-8650U (8) @ 4.200GHz 
+   yMMMMMMMMMms/..-::oM:    .+dMMMMMy      GPU: Intel UHD Graphics 620 
+    :mMMMMMMMMMMMMNNNNM: :smMMMMMMm:       Memory: 6126MiB / 23903MiB 
+      /dMMMMMMMMMMMMMMMdNMMMMMMMd/
+        .odMMMMMMMMMMMMMMMMMMdo.                                   
+           `:+shmNNMMNNmhs+:`                                      
+```
+
+##### No tearing with these settings as of 21-12-2023:
+
+X11 config:
+```
+$ cat /etc/X11/xorg.conf.d/20-intel.conf
+Section "Device"
+   Identifier "Intel Graphics"
+   Driver "intel"
+   Option "TearFree" "true"
+   Option "DRI" "3"
+EndSection
+```
+
+MATE settings:
+- MATE Tweak application
+- Windows
+- Window manager: Marco (built-in: Xpresent)
+
 #### Nvidia driver
 
 ```
