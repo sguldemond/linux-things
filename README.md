@@ -1,5 +1,17 @@
 # Linux things
 
+### DNS
+
+On my Thinkpad t480s running Ubuntu Mate 22.04.03, DNS lookup seemed to be very slow.
+Everytime I opened a webpage to a domain that I did not visit before or recently, I could not find it, only after a few reloads.
+
+I edited my `/etc/systemd/resolved.conf` file to include this:
+```
+DNS=1.1.1.1 1.0.0.1
+FallbackDNS=8.8.8.8 8.8.4.4
+```
+And restarted systemd-resolved: `sudo systemctl restart resolved`.
+
 ### Secure SSH Daemon
 
 When running an SSH server like `openssh-server` on your machine, make sure to secure it.
