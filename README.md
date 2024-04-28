@@ -1,5 +1,24 @@
 # Linux things
 
+### AppImage
+
+Some application come in the form of AppImages. There is the [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) application, but it has not been updated since 2020.
+
+In order to manage them myself I created a special folder `Applications` in my home directory where I copy the AppImage to.
+The AppImage has to be executable to start it.
+
+Now you can create a Desktop Entry in `~/.local/share/applications`:
+```
+[Desktop Entry]
+Version=1.0
+Name=Nextcloud
+Exec=/home/stan/Applications/Nextcloud-3.13.0-x86_64.AppImage
+Terminal=false
+Type=Application
+Icon=/home/stan/.local/share/applications/nextcloud-icon.png
+```
+The icon I found through DuckDuckGo image search.
+
 ### DNS
 
 On my Thinkpad t480s running Ubuntu Mate 22.04.03, DNS lookup seemed to be very slow.
