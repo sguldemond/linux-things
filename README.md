@@ -7,7 +7,7 @@ Some application come in the form of AppImages. There is the [AppImageLauncher](
 In order to manage them myself I created a special folder `Applications` in my home directory where I copy the AppImage to.
 The AppImage has to be executable to start it.
 
-Now you can create a Desktop Entry in `~/.local/share/applications`:
+Now you can create a Desktop Entry in `~/.local/share/applications/nextcloud.desktop`:
 ```
 [Desktop Entry]
 Version=1.0
