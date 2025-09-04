@@ -1,5 +1,30 @@
 # Linux things
 
+### Webex
+
+On September 4, 2025 I installed Webex on Ubuntu 24.04.03 (LTS).
+I downloaded the .deb from here: https://www.webex.com/downloads.html
+The app wold crash, I had to manually install `libgbm1` via apt.
+The app crash silently this time. I saw in `journalctl` something about `apparmor`, I followed this post: https://community.cisco.com/t5/webex-meetings-and-webex-app/installing-webex-app-on-ubuntu-24-04/td-p/5163446
+
+Created this file: `/etc/apparmor.d/opt.Webex.bin.CiscoCollabHost`
+```
+abi <abi/4.0>,
+include <tunables/global>
+
+profile CiscoWebEx /opt/Webex/bin/CiscoCollabHost flags=(unconfined) {
+  userns,
+
+  # Site-specific additions and overrides. See local/README for details.
+  include if exists <local/CiscoWebEx>
+}
+```
+and loaded the profile into apparmor with command:
+```
+sudo apparmor_parser -r /etc/apparmor.d/opt.Webex.bin.CiscoCollabHost
+```
+Webex now worked.
+
 ### AppImage
 
 Some application come in the form of AppImages. There is the [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) application, but it has not been updated since 2020.
